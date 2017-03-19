@@ -2,5 +2,14 @@ body {
 		background-image: url('http://i.imgur.com/udbGnwW.png');
 		background-color: white;
 		color: black;
-		font-family: 'Roboto';
+		font-family: 'Roboto', sans-serif;
+
+}
+h1{
+	text-shadow: 2px 2px 2px #aaa;
+
+}
+
+.page-content{
+	padding-left:50px;
 }
