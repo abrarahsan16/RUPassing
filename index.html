@@ -2,59 +2,41 @@
 <html>
 	<head>
 		<title> RU Passing | Grade Calculator </title>
-<!--MDL-->
+		<!--MDL-->
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
 			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 			<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.green-light_green.min.css" />
 			<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 			<link rel="stylesheet" href="css/custom.css">
-		<!-- JQuery-->
+			<!-- Bootstrap-->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<!-- JQuery-->
 			<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 			<script src="js/calculator.js" type="text/javascript"></script>
-
+			<!--font-->
+			<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	</head>
-
-
-	<script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
-	<script>
-	  // Initialize Firebase
-	  var config = {
-	    apiKey: "AIzaSyBPBFFzkjPDH6tLJ9bDc5c0v4Csw6_SPn0",
-	    authDomain: "ru-passing.firebaseapp.com",
-	    databaseURL: "https://ru-passing.firebaseio.com",
-	    storageBucket: "ru-passing.appspot.com",
-	    messagingSenderId: "1015800747684"
-	  };
-	  firebase.initializeApp(config);
-	</script>
-
+	<!--DAB Code-->
 	<script type="text/javascript">
-	     // speed in milliseconds
 	     var scrollSpeed = 60;
-	     // set the default position
 	     var current = 0;
-	     // set the direction
 	     var direction = 'v';
 	     function bgscroll() {
-	         // 1 pixel row at a time
 	         current -= 25;
-	         // move the background with backgrond-position css properties
 	         $('body').css("backgroundPosition", (direction == 'h') ? current + "px 0" : "0 " + current + "px");
 	     }
-	     //Calls the scrolling function repeatedly
 	     setInterval("bgscroll()", scrollSpeed);
 		</script>
 
 		<body>
 		<!-- Simple header with fixed tabs. -->
-		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
-		            mdl-layout--fixed-tabs">
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
 		  <header class="mdl-layout__header">
 		    <div class="mdl-layout__header-row">
 		      <!-- Title -->
-		      <span class="mdl-layout-title">RU Passing?</span>
-		    </div>
+			  <span class="mdl-layout-title">RU PASSING | Grade Calculator</span>
+			</div>
 		    <!-- Tabs -->
 		    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
 		      <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Grade Entry</a>
@@ -63,52 +45,102 @@
 		    </div>
 		  </header>
 		  <div class="mdl-layout__drawer">
-		    <span class="mdl-layout-title">Title</span>
+		    <span class="mdl-layout-title">Grade Calculator</span>
 		  </div>
 		  <main class="mdl-layout__content">
-		    <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+			  <!-- FIRST PAGE-->
+			  <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
 		      <div class="page-content">
-
-					<div class = "form">
-						<form action="#">
-					  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					    <input class="mdl-textfield__input" type="text" id="coursecode_1">
-					    <label class="mdl-textfield__label" for="coursecode_1">Enter Course Code...</label>
-						</div>
-							<ul id ="marks"></ul>
-							<a href='#' onclick="createinput()">Add Class Mark</a>
-
-						<div>
-						<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-  					<i class="material-icons">add</i>r
+				  <br>
+				  <h1> Enter Your Marks</h1>
+				  <br>
+				 <!-- <button class="mdl-button mdl-js-button mdl-js-ripple-effect">Add Course</button>
+				  <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick = "createinput()">Add Mark</button><br>-->
+					<!-- Numeric Textfield with Floating Label -->
+					<div id = "marks">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mark1">
+				    <label class="mdl-textfield__label" for="mark1">Mark Achieved...</label>
+				    <span class="mdl-textfield__error">Input is not a number!</span>
+				  	</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+  				  	<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="weight1">
+  				  	<label class="mdl-textfield__label" for="weight4">Mark Weighing...</label>
+  				  	<span class="mdl-textfield__error">Input is not a number!</span>
 					</div>
-					</form>
-
+					<br>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mark2">
+				    <label class="mdl-textfield__label" for="mark1">Mark Achieved...</label>
+				    <span class="mdl-textfield__error">Input is not a number!</span>
+				  	</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+  				  	<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="weight2">
+  				  	<label class="mdl-textfield__label" for="weight4">Mark Weighing...</label>
+  				  	<span class="mdl-textfield__error">Input is not a number!</span>
+					</div>
+					<br>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mark3">
+				    <label class="mdl-textfield__label" for="mark1">Mark Achieved...</label>
+				    <span class="mdl-textfield__error">Input is not a number!</span>
+				  	</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+  				  	<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="weight3">
+  				  	<label class="mdl-textfield__label" for="weight4">Mark Weighing...</label>
+  				  	<span class="mdl-textfield__error">Input is not a number!</span>
+					</div>
+					<br>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mark4">
+				    <label class="mdl-textfield__label" for="mark1">Mark Achieved...</label>
+				    <span class="mdl-textfield__error">Input is not a number!</span>
+				  	</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+  				  	<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="weight4">
+  				  	<label class="mdl-textfield__label" for="weight4">Mark Weighing...</label>
+  				  	<span class="mdl-textfield__error">Input is not a number!</span>
+					</div>
+					<br>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mark5">
+				    <label class="mdl-textfield__label" for="mark1">Mark Achieved...</label>
+				    <span class="mdl-textfield__error">Input is not a number!</span>
+				  	</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+  				  	<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="weight5">
+  				  	<label class="mdl-textfield__label" for="weight4">Mark Weighing...</label>
+  				  	<span class="mdl-textfield__error">Input is not a number!</span>
+					</div>
+					<br>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mark6">
+				    <label class="mdl-textfield__label" for="mark1">Mark Achieved...</label>
+				    <span class="mdl-textfield__error">Input is not a number!</span>
+				  	</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+  				  	<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="weight6">
+  				  	<label class="mdl-textfield__label" for="weight4">Mark Weighing...</label>
+  				  	<span class="mdl-textfield__error">Input is not a number!</span>
+					</div>
+					<br>
+  					</div>
+					<br><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id = "submit">Submit</button><br>
+			 	</form>
+			  </div>
+			  </section>
+			  <!--SECOND PAGE-->
+			  <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+		      	<div class="page-content">
+				</div>
 		    </section>
-		    <section class="mdl-layout__tab-panel" id="fixed-tab-2">
-		      <div class="page-content"><!-- Your content goes here --></div>
-		    </section>
+			<!--THIRD PAGE-->
 		    <section class="mdl-layout__tab-panel" id="fixed-tab-3">
-		      <div class="page-content"><!-- Your content goes here --></div>
+		      <div class="page-content">
+			  </div>
 		    </section>
+
 		  </main>
 		</div>
-
-
-	<!---form>
-	Course Code:<br>
-	<input type = "text" name = "coursecode">
-	<button type = "button" onclick = "horizontalButton()" class = "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">+</button></br />
-
-	<script>
-	/*function horizontalButton()
-	{
-		how the fuck do i make a function or should i just kill myself 50% in cps125 wtffffffffff
-	}*/
-	</script>
-	<button type = "button" class= "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">+</button>
--->
-	</div>
-	</div>
 	</body>
 </html>
