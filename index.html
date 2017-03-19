@@ -4,7 +4,7 @@
 		<title> RU Passing | Grade Calculator </title>
 		<!--MDL-->
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
 			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 			<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.green-light_green.min.css" />
 			<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -14,6 +14,8 @@
 			<!-- JQuery-->
 			<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 			<script src="js/calculator.js" type="text/javascript"></script>
+			<!--font-->
+			<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	</head>
 	<!--DAB Code-->
 	<script type="text/javascript">
@@ -52,52 +54,78 @@
 				  <br>
 				  <h1> Enter Your Marks</h1>
 				  <br>
-				  <button class="mdl-button mdl-js-button mdl-js-ripple-effect">Add Course</button>
-				  <button class="mdl-button mdl-js-button mdl-js-ripple-effect">Add Mark</button><br>
+				 <!-- <button class="mdl-button mdl-js-button mdl-js-ripple-effect">Add Course</button>
+				  <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick = "createinput()">Add Mark</button><br>-->
 					<!-- Numeric Textfield with Floating Label -->
+					<div id = "marks">
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
-				    <label class="mdl-textfield__label" for="sample4">Mark Achieved...</label>
+				    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mark1">
+				    <label class="mdl-textfield__label" for="mark1">Mark Achieved...</label>
 				    <span class="mdl-textfield__error">Input is not a number!</span>
 				  	</div>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-  				  	<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
-  				  	<label class="mdl-textfield__label" for="sample4">Mark Weighing...</label>
+  				  	<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="weight1">
+  				  	<label class="mdl-textfield__label" for="weight4">Mark Weighing...</label>
   				  	<span class="mdl-textfield__error">Input is not a number!</span>
-  					</div>
+					</div>
 					<br>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
-				    <label class="mdl-textfield__label" for="sample4">Mark Achieved...</label>
+				    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mark2">
+				    <label class="mdl-textfield__label" for="mark1">Mark Achieved...</label>
 				    <span class="mdl-textfield__error">Input is not a number!</span>
 				  	</div>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-  				  	<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
-  				  	<label class="mdl-textfield__label" for="sample4">Mark Weighing...</label>
+  				  	<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="weight2">
+  				  	<label class="mdl-textfield__label" for="weight4">Mark Weighing...</label>
   				  	<span class="mdl-textfield__error">Input is not a number!</span>
-  					</div>
+					</div>
 					<br>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
-				    <label class="mdl-textfield__label" for="sample4">Mark Achieved...</label>
+				    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mark3">
+				    <label class="mdl-textfield__label" for="mark1">Mark Achieved...</label>
 				    <span class="mdl-textfield__error">Input is not a number!</span>
 				  	</div>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-  				  	<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
-  				  	<label class="mdl-textfield__label" for="sample4">Mark Weighing...</label>
+  				  	<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="weight3">
+  				  	<label class="mdl-textfield__label" for="weight4">Mark Weighing...</label>
   				  	<span class="mdl-textfield__error">Input is not a number!</span>
-  					</div>
+					</div>
 					<br>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
-				    <label class="mdl-textfield__label" for="sample4">Mark Achieved...</label>
+				    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mark4">
+				    <label class="mdl-textfield__label" for="mark1">Mark Achieved...</label>
 				    <span class="mdl-textfield__error">Input is not a number!</span>
 				  	</div>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-  				  	<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
-  				  	<label class="mdl-textfield__label" for="sample4">Mark Weighing...</label>
+  				  	<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="weight4">
+  				  	<label class="mdl-textfield__label" for="weight4">Mark Weighing...</label>
   				  	<span class="mdl-textfield__error">Input is not a number!</span>
+					</div>
+					<br>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mark5">
+				    <label class="mdl-textfield__label" for="mark1">Mark Achieved...</label>
+				    <span class="mdl-textfield__error">Input is not a number!</span>
+				  	</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+  				  	<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="weight5">
+  				  	<label class="mdl-textfield__label" for="weight4">Mark Weighing...</label>
+  				  	<span class="mdl-textfield__error">Input is not a number!</span>
+					</div>
+					<br>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="mark6">
+				    <label class="mdl-textfield__label" for="mark1">Mark Achieved...</label>
+				    <span class="mdl-textfield__error">Input is not a number!</span>
+				  	</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+  				  	<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="weight6">
+  				  	<label class="mdl-textfield__label" for="weight4">Mark Weighing...</label>
+  				  	<span class="mdl-textfield__error">Input is not a number!</span>
+					</div>
+					<br>
   					</div>
+					<br><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id = "submit">Submit</button><br>
 			 	</form>
 			  </div>
 			  </section>
