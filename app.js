@@ -8,6 +8,16 @@
       storageBucket: "test-project-cccfb.appspot.com",
     };
     firebase.initializeApp(config);
+    console.log(firebase);
+    var database=firebase.database();
+    var ref=database.ref('scores');
+
+    var data={
+      name:"MTH240",
+      score:100
+    }
+    ref.push(data);
+
 //var count=0;
 //get elements
   const txtEmail=document.getElementById('txtEmail');
@@ -29,18 +39,6 @@
   });
 
 //signup
-  btnSignup.addEventListener("click",e=>
-  {
-  //get email and password
-  //todo check for email
-    const email=txtEmail.value;
-    const pass=txtPassword.value;
-    const auth=firebase.auth();
-  //signin
-    const promise = auth.createUserWithEmailAndPassword(email, pass);
-    promise.catch(e=>console.log(e.message));
-  });
-
 
 
   //add realtime listener
