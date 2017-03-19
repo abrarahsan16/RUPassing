@@ -31,6 +31,33 @@
 	     setInterval("bgscroll()", scrollSpeed);
 		</script>
 
+		<script>
+		function myFunction(output)
+		{
+			var mark1 = parseInt(document.getElementById("mark1").value);
+			var weight1 = parseInt(document.getElementById("weight1").value);
+			var mark2 = parseInt(document.getElementById("mark2").value);
+			var weight2 = parseInt(document.getElementById("weight2").value);
+			var mark3 = parseInt(document.getElementById("mark3").value);
+			var weight3 = parseInt(document.getElementById("weight3").value);
+			var mark4 = parseInt(document.getElementById("mark4").value);
+			var weight4 = parseInt(document.getElementById("weight4").value);
+			var mark5 = parseInt(document.getElementById("mark5").value);
+			var weight5 = parseInt(document.getElementById("weight5").value);
+			var mark6 = parseInt(document.getElementById("mark6").value);
+			var weight6 = parseInt(document.getElementById("weight6").value);
+			var mark7 = parseInt(document.getElementById("mark7").value);
+			var weight7 = parseInt(document.getElementById("weight7").value);
+			var mark8 = parseInt(document.getElementById("mark8").value);
+			var weight8 = parseInt(document.getElementById("weight8").value);
+			var mark9 = parseInt(document.getElementById("mark9").value);
+			var weight9 = parseInt(document.getElementById("weight9").value);
+			var mark10 = parseInt(document.getElementById("mark10").value);
+			var weight10 = parseInt(document.getElementById("weight10").value);
+			document.getElementById("output").innerHTML = mark1*(weight1/100) + mark2*(weight2/100) + mark3*(weight3/100) + mark4*(weight4/100) + mark5*(weight5/100)+mark6*(weight6/100)+mark7*(weight7/100)+mark8*(weight8/100)+mark9*(weight9/100)+mark10*(weight10/100);
+}
+		</script>
+
 		<body>
 		<!-- Simple header with fixed tabs. -->
 		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
@@ -42,8 +69,8 @@
 		    <!-- Tabs -->
 		    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
 		      <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Grade Entry</a>
-		      <a href="#fixed-tab-2" class="mdl-layout__tab">What If? </a>
-		      <a href="#fixed-tab-3" class="mdl-layout__tab">Data Visualization</a>
+		      <!--<a href="#fixed-tab-2" class="mdl-layout__tab">What If? </a>
+		      <a href="#fixed-tab-3" class="mdl-layout__tab">Data Visualization</a>-->
 		    </div>
 		  </header>
 		  <div class="mdl-layout__drawer">
@@ -175,32 +202,7 @@
   				  	<span class="mdl-textfield__error">Input is not a number!</span>
 					</div>
 					<br>
-					<script>
-					function myFunction(output)
-					{
-						var mark1 = parseInt(document.getElementById("mark1").value);
-						var weight1 = parseInt(document.getElementById("weight1").value);
-						var mark2 = parseInt(document.getElementById("mark2").value);
-						var weight2 = parseInt(document.getElementById("weight2").value);
-						var mark3 = parseInt(document.getElementById("mark3").value);
-						var weight3 = parseInt(document.getElementById("weight3").value);
-						var mark4 = parseInt(document.getElementById("mark4").value);
-						var weight4 = parseInt(document.getElementById("weight4").value);
-						var mark5 = parseInt(document.getElementById("mark5").value);
-						var weight5 = parseInt(document.getElementById("weight5").value);
-						var mark6 = parseInt(document.getElementById("mark6").value);
-						var weight6 = parseInt(document.getElementById("weight6").value);
-						var mark7 = parseInt(document.getElementById("mark7").value);
-						var weight7 = parseInt(document.getElementById("weight7").value);
-						var mark8 = parseInt(document.getElementById("mark8").value);
-						var weight8 = parseInt(document.getElementById("weight8").value);
-						var mark9 = parseInt(document.getElementById("mark9").value);
-						var weight9 = parseInt(document.getElementById("weight9").value);
-						var mark10 = parseInt(document.getElementById("mark10").value);
-						var weight10 = parseInt(document.getElementById("weight10").value);
-						document.getElementById("output").innerHTML = mark1*(weight1/100) + mark2*(weight2/100) + mark3*(weight3/100) + mark4*(weight4/100) + mark5*(weight5/100)+mark6*(weight6/100)+mark7*(weight7/100)+mark8*(weight8/100)+mark9*(weight9/100)+mark10*(weight10/100);
-					}
-					</script>
+
 
 					<p id="output"></p><br>
 					<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="myFunction(output)">Submit</button>
